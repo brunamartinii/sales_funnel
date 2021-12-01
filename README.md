@@ -1,6 +1,6 @@
 # Funil de vendas
 
-Como um novo desenvolvedor na empresa Agenor, você foi encarregado de trabalhar
+Como um novo desenvolvedor na empresa Agendor, você foi encarregado de trabalhar
 no projeto de funil de vendas da empresa. Nele, os usuários podem adicionar negócios
 e evolui-los de etapa para organizar o seu processo comercial.
 
