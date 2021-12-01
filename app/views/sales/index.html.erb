@@ -1,0 +1,23 @@
+<div class="container">
+
+  <h1 class="list-title">Listagem de clientes</h1>
+  <table>
+    <tr>
+      <th>Negócio</th>
+      <th>Cliente</th>
+      <th>Valor</th>
+      <th>Ações</th>
+    </tr>
+    <% @sales.each do |sale| %>
+      <tr>
+        <td><%= sale.product %></td>
+        <td><%= sale.customer %></td>
+        <td><%= number_to_currency(sale.amount, unit: "R$ ", separator: ",", delimiter: ".") %></td>
+        <td>
+          <%= link_to 'Ver Detalhes', sale_path(sale) %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+</div>
