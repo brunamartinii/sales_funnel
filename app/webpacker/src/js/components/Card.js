@@ -10,32 +10,34 @@ const Card = (props) => {
   }
 
   return (
-    <div
-      id={`card-${props.id}`}
-      className={`
-        padding-md border-rounded bg-white margin-bottom-sm break-word
-        box-shadow ${props.dragged && "opacity-6"}
-      `}
-      draggable="true"
-      onDragStart={onDragStart}
-      onDragEnd={() => props.onDragEnd(props.columnIndex, props.id)}
-    >
-      <div className="margin-top-sm margin-bottom-sm text-tight">
-        {props.title}
+    <a href={`/sales/${props.id}`} className="no-style" >
+      <div
+        id={`card-${props.id}`}
+        className={`
+          padding-md border-rounded bg-white margin-bottom-sm break-word
+          box-shadow ${props.dragged && "opacity-6"}
+        `}
+        draggable="true"
+        onDragStart={onDragStart}
+        onDragEnd={() => props.onDragEnd(props.columnIndex, props.id)}
+      >
+        <div className="margin-top-sm margin-bottom-sm text-tight">
+          {props.title}
+        </div>
+        <div>
+          <img
+            src={companyIcon}
+            className="margin-right-sm height-100 vertical-align-middle opacity-6"
+          />
+          <span className="vertical-align-middle text-smaller">
+            {props.customerName}
+          </span>
+        </div>
+        <div className="margin-top-md text-right text-smaller text-success">
+          <Currency amount={props.amount} />
+        </div>
       </div>
-      <div>
-        <img
-          src={companyIcon}
-          className="margin-right-sm height-100 vertical-align-middle opacity-6"
-        />
-        <span className="vertical-align-middle text-smaller">
-          {props.customerName}
-        </span>
-      </div>
-      <div className="margin-top-md text-right text-smaller text-success">
-        <Currency amount={props.amount} />
-      </div>
-    </div>
+    </a>
   )
 }
 
