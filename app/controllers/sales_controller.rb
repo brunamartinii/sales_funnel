@@ -1,6 +1,10 @@
 class SalesController < ApplicationController
   helper_method :sale
 
+  def index
+    @sales  = Sale.all
+  end
+
   def create
     sale = Sale.create_with_progression(sale_params)
 
@@ -19,6 +23,11 @@ class SalesController < ApplicationController
     else
       head :unprocessable_entity
     end
+  end
+
+  def show
+    @sale = Sale.find(params[:id])
+    @progressions = @sale.progressions
   end
 
   private
