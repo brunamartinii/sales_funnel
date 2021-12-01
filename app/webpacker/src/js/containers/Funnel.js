@@ -1,6 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
 import AddCardButton from "../components/AddCardButton"
+import ListButton from "../components/ListButton"
 import Column from "../components/Column"
 import Toast from "../components/Toast"
 import {
@@ -19,6 +20,7 @@ const Funnel = (props) => (
     }
 
     <AddCardButton onClick={props.onClickAdd} />
+    <ListButton />
 
     <div className="flex margin-top-lg">
       {props.columns.map((column, index) =>
