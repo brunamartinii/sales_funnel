@@ -45,17 +45,18 @@ table {
 th {
   color: #5f82a9;
   font-size: 18px;
+  text-align: center;
 }
 td {
-  text-align: center;
+  text-align: center !important;
 }
 .modal {
   position: fixed; 
-  z-index: 1; 
+  z-index: 99999; 
   left: 0;
   top: 0;
   width: 400px;
-  height: 500px; 
+  height: auto;
   background-color: #fff;
   border-radius: 5px;
   margin: 50px;
@@ -65,7 +66,7 @@ td {
   height: 100%; 
   border-radius: 5px;
 }
-.modal-header {
+.modal-h {
   background-color: #5f82a9;
   color: white;
   border-radius: 5px;
@@ -112,4 +113,6 @@ p {
 .no-style{
   text-decoration: none;
 }
-
+.modal-dialog {
+  margin: 0px;
+}
