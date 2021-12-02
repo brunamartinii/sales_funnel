@@ -1,6 +1,6 @@
-<div id="modal" class="modal fade" role="dialog">
+<div id="modal" class="modal fade show" role="dialog" style="display: block;">
   <div class="modal-dialog modal-lg">
-    <div class="modal-header">
+    <div class="modal-h">
       <h2><%= @sale.product %></h2>
       <p class="header-infos"><%= @sale.customer %></p>
       <p class="header-infos info-amount"><%= number_to_currency(@sale.amount, unit: "R$ ", separator: ",", delimiter: ".") %></p>
