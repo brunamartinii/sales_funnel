@@ -1,0 +1,30 @@
+<div class="modal fade" id="showDetails<%= sale.id%>" tabindex="-1" role="dialog" aria-labelledby="showDetailsLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+		<button type="button" class="close text-white p-2" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+    <div class="modal-h">
+      <h2><%= sale.product %></h2>
+      <p class="header-infos"><%= sale.customer %></p>
+      <p class="header-infos info-amount"><%= number_to_currency(sale.amount, unit: "R$ ", separator: ",", delimiter: ".") %></p>
+    </div>
+
+
+    <div class="modal-content">
+			<% progressions.reverse.each do |progression| %>
+				<div class="row">
+					<div class="col-6">
+					<p class="<%= progression.closed? ? "text-green prog-stage" : "prog-stage" %>">
+							<%= I18n.t("activerecord.attributes.sale.stages.#{progression.stage}") %>
+					</p>
+					<p class="days-ago"><%= pluralize(progression.days_ago, 'dia') %></p>
+					</div>
+					<div class="col-6">
+					<p class="prog-info"><%= progression.created_at.strftime("%d/%m/%y") %></p>
+					<p class="prog-info"><%= progression.created_at.strftime("%H:%M") %><p>
+					</div>
+				</div>
+			<% end %>
+    </div>
+  </div>
+</div>
