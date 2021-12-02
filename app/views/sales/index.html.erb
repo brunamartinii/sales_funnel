@@ -1,5 +1,4 @@
 <div class="container">
-
   <h1 class="list-title">Listagem de clientes</h1>
   <table>
     <tr>
@@ -9,15 +8,17 @@
       <th>Ações</th>
     </tr>
     <% @sales.each do |sale| %>
+      <%= render 'modal', sale: sale, progressions: sale.progressions %>
       <tr>
         <td><%= sale.product %></td>
         <td><%= sale.customer %></td>
         <td><%= number_to_currency(sale.amount, unit: "R$ ", separator: ",", delimiter: ".") %></td>
         <td>
-          <%= link_to 'Ver Detalhes', sale_path(sale) %>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#showDetails<%= sale.id%>">
+            Ver Detalhes
+          </button>
         </td>
       </tr>
     <% end %>
   </table>
-
 </div>
